@@ -1,3 +1,5 @@
+import PersonListItem from "./PersonsItem";
+
 interface IFormInput {
   name: string;
   yearsOfLife: string;
@@ -5,25 +7,19 @@ interface IFormInput {
 }
 
 interface PersonsListProps {
-  persons: IFormInput[]; // Указываем тип данных, которые передаем
+  persons: IFormInput[];
 }
 
 const PersonsList = ({ persons }: PersonsListProps) => {
   return (
-    <div>
-      {persons.length === 0 ? (
-        <p>No persons found.</p> // Если нет людей в списке
-      ) : (
-        <ul>
-          {persons.map((person, index) => (
-            <li key={index}>
-              <strong>{person.name}</strong>
-              <p>Years of Life: {person.yearsOfLife}</p>
-              <p>Additional Info: {person.additionalInfo}</p>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="flex flex-col items-center">
+      {persons.map((person, index) => (
+        <PersonListItem
+          key={index}
+          person={person}
+          showLine={index < persons.length - 1}
+        />
+      ))}
     </div>
   );
 };

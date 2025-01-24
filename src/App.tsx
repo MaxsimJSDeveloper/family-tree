@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const savedPersons = window.localStorage.getItem("people");
     if (savedPersons) {
-      setPerson(JSON.parse(savedPersons)); // Преобразуем строку обратно в массив
+      setPerson(JSON.parse(savedPersons));
     }
   }, []);
 
