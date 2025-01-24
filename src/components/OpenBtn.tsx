@@ -17,8 +17,11 @@ const OpenBtn = ({ persons, setPerson }: OpenBtnProps) => {
 
   return (
     <>
-      <button onClick={toggleModal}>
-        <RiAddLargeFill />
+      <button
+        onClick={toggleModal}
+        className="fixed bottom-8 right-8 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition"
+      >
+        <RiAddLargeFill className="text-3xl" />
       </button>
       <AddPersonForm
         isOpen={isOpen}

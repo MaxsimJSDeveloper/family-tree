@@ -83,7 +83,7 @@ const AddPersonForm = ({
             <input
               type="submit"
               value="Submit"
-              className="border p-2 rounded-md bg-blue-500 text-white"
+              className="border p-2 rounded-md bg-blue-500 text-white w-full"
             />
           </form>
         </Modal>
