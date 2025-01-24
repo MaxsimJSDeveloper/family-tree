@@ -19,7 +19,7 @@ const OpenBtn = ({ persons, setPerson }: OpenBtnProps) => {
     <>
       <button
         onClick={toggleModal}
-        className="fixed bottom-8 right-8 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition"
+        className="fixed bottom-8 right-8 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 hover:scale-110 transition-all duration-300"
       >
         <RiAddLargeFill className="text-3xl" />
       </button>

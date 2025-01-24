@@ -20,21 +20,26 @@ const PersonsList = ({ persons, setPerson }: PersonsListProps) => {
     );
 
     localStorage.setItem("people", JSON.stringify(updatedPersons));
-
     setPerson(updatedPersons);
   };
 
   return (
-    <div className="flex flex-col items-center space-y-4">
-      {persons.map((person, index) => (
-        <PersonListItem
-          key={index}
-          person={person}
-          showLine={index < persons.length - 1}
-          onDelete={() => handleDelete(person)}
-        />
-      ))}
-    </div>
+    <>
+      {persons.length > 0 ? (
+        <div className="flex flex-col items-center space-y-4 mt-6">
+          {persons.map((person, index) => (
+            <PersonListItem
+              key={index}
+              person={person}
+              showLine={index < persons.length - 1}
+              onDelete={() => handleDelete(person)}
+            />
+          ))}
+        </div>
+      ) : (
+        <p>Add more persons</p>
+      )}
+    </>
   );
 };
 
